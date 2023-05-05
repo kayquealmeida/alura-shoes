@@ -12,6 +12,14 @@ export default function Topo({ titulo }) {
 }
 
 const styles = StyleSheet.create({
+  titulo: {
+    backgroundColor: "#f6f6f6",
+    width: "100%",
+    fontSize: 24,
+    textAlign: "center",
+    color: "#000000",
+    paddingTop: 40
+  },
   topo: {
     width: "100%",
     height: 493 / 781 * width,
@@ -23,13 +31,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 5
-  },
-  titulo: {
-    backgroundColor: "#f6f6f6",
-    width: "100%",
-    fontSize: 24,
-    paddingVertical: 10,
-    textAlign: "center",
-    color: "#000000",
   },
 })
