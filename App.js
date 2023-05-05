@@ -1,20 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { useFonts, Ubuntu_400Regular } from '@expo-google-fonts/ubuntu';
+import AppLoading from 'expo-app-loading';
+import Sknrs from './src/telas/Snkrs';
+import mock from './src/mocks/snkrs'
 
 export default function App() {
+
+  let [fontLoaded] = useFonts({
+    "ubuntu": Ubuntu_400Regular
+  });
+
+  if(!fontLoaded) {
+    return <AppLoading/>
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{flex: 1, backgroundColor: "#E6E6E6"}}>
+      <StatusBar/>
+      <Sknrs { ...mock } />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
